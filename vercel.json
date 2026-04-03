@@ -5,18 +5,26 @@
       "use": "@vercel/static"
     },
     {
-      "src": "backend/app/main.py",
-      "use": "@vercel/python"
+      "src": "backend",
+      "use": "@vercel/python",
+      "config": {
+        "installCommand": "pip install -r requirements.txt",
+        "buildCommand": "echo 'Python build complete'",
+        "runtime": "python3.11"
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/v1/(.*)",
-      "dest": "backend/app/main.py"
+      "dest": "/backend/app/main.py"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/dist/$1"
+      "dest": "/frontend/dist/index.html"
     }
   ]
 }
