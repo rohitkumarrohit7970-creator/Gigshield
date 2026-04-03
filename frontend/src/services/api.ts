@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://gigshield-backend-api.vercel.app/api/v1';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://gigshield-cgp7rarsh-rohitkumarrohit7970-creators-projects.vercel.app/api/v1';
 
 const api = axios.create({
   baseURL: API_BASE,
