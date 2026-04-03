@@ -1,14 +1,5 @@
 {
-  "builds": [
-    {
-      "use": "static",
-      "src": "frontend/dist/**"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
-    }
-  ]
+  "framework": "vite",
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist"
 }
