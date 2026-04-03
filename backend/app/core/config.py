@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "GigShield"
     APP_VERSION: str = "1.0.0"
     
-    DATABASE_URL: str = "sqlite+aiosqlite:///./gigshield.db"
+    DATABASE_URL: str = "postgresql+asyncpg://postgres:password@localhost/gigshield"
     
     SECRET_KEY: str = "gigshield-secret-key-change-in-production"
     ALGORITHM: str = "HS256"
@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     
     class Config:
         env_file = ".env"
+        extra = "ignore"
 
 
 settings = Settings()
