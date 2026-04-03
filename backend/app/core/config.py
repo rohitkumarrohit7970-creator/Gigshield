@@ -1,12 +1,13 @@
 from pydantic_settings import BaseSettings
 from typing import Optional
+import os
 
 
 class Settings(BaseSettings):
     APP_NAME: str = "GigShield"
     APP_VERSION: str = "1.0.0"
     
-    DATABASE_URL: str = ""
+    DATABASE_URL: str = os.environ.get("DATABASE_URL", "")
     
     SECRET_KEY: str = "gigshield-secret-key-change-in-production"
     ALGORITHM: str = "HS256"
